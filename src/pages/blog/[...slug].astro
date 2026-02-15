@@ -22,7 +22,7 @@ const { Content } = await post.render();
   </head>
   <body style="max-width: 760px; margin: 40px auto; padding: 0 16px; font-family: system-ui; line-height: 1.6;">
     <header style="margin-bottom: 24px;">
-      <a href="/blog/" style="text-decoration:none;">← Posts</a>
+      <a href={`${import.meta.env.BASE_URL}blog/`} style="text-decoration:none;">← Posts</a>
       <h1 style="margin: 12px 0 6px;">{post.data.title}</h1>
       <div style="opacity:0.7;">
         {post.data.pubDate.toISOString().slice(0,10)}
