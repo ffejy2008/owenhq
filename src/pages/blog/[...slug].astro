@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-const SITE_BASE = "/owenhq";
+const SITE_BASE = "";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -20,9 +20,7 @@ const { Content } = await post.render();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{post.data.title} | OwenHQ</title>
-    {post.data.description && (
-      <meta name="description" content={post.data.description} />
-    )}
+    {post.data.description && <meta name="description" content={post.data.description} />}
   </head>
 
   <body style="max-width: 760px; margin: 40px auto; padding: 0 16px; font-family: system-ui; line-height: 1.6;">
