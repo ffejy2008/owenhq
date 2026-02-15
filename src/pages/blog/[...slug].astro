@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
+const SITE_BASE = "/owenhq";
+
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({
@@ -23,12 +25,9 @@ const { Content } = await post.render();
     )}
   </head>
 
-  <body
-    style="max-width: 760px; margin: 40px auto; padding: 0 16px; font-family: system-ui; line-height: 1.6;"
-  >
+  <body style="max-width: 760px; margin: 40px auto; padding: 0 16px; font-family: system-ui; line-height: 1.6;">
     <header style="margin-bottom: 24px;">
-      <!-- Go up one level to /blog/ -->
-      <a href="../" style="text-decoration:none;">← Posts</a>
+      <a href={`${SITE_BASE}/blog/`} style="text-decoration:none;">← Posts</a>
 
       <h1 style="margin: 12px 0 6px;">{post.data.title}</h1>
 
@@ -37,13 +36,9 @@ const { Content } = await post.render();
       </div>
 
       {post.data.tags?.length ? (
-        <div
-          style="margin-top: 10px; display:flex; gap:8px; flex-wrap:wrap;"
-        >
+        <div style="margin-top: 10px; display:flex; gap:8px; flex-wrap:wrap;">
           {post.data.tags.map((t) => (
-            <span
-              style="font-size: 12px; padding: 3px 8px; border: 1px solid #ddd; border-radius: 999px; opacity:0.9;"
-            >
+            <span style="font-size: 12px; padding: 3px 8px; border: 1px solid #ddd; border-radius: 999px; opacity:0.9;">
               {t}
             </span>
           ))}

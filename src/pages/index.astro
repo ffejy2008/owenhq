@@ -1,4 +1,5 @@
 ---
+const GH_BASE = "/owenhq";
 ---
 
 <html lang="en">
@@ -12,19 +13,16 @@
     />
   </head>
 
-  <body
-    style="max-width: 760px; margin: 40px auto; padding: 0 16px; font-family: system-ui;"
-  >
+  <body style="max-width: 760px; margin: 40px auto; padding: 0 16px; font-family: system-ui;">
     <h1>OwenHQ</h1>
 
     <p style="opacity:0.85; line-height:1.6;">
-      I’m building a walking-first fitness app (The Healthy Walker) and testing
-      it daily with long walks in Goa. This site is a public lab notebook:
-      experiments, decisions, and what changes as the app improves.
+      I’m building a walking-first fitness app (The Healthy Walker) and testing it daily with long walks in Goa.
+      This site is a public lab notebook: experiments, decisions, and what changes as the app improves.
     </p>
 
     <p style="margin-top: 18px;">
-      <a href="./blog/" style="font-weight:600;">Read the posts →</a>
+      <a href={`${GH_BASE}/blog/`} style="font-weight:600;">Read the posts →</a>
     </p>
   </body>
 </html>
